@@ -4,22 +4,27 @@ let count = 0;
 const clickSound = new Audio('assets/click.mp3');
 clickSound.preload = "auto";
 
-function playClickSound() {
-  clickSound.currentTime = 0; // rewind to start
+function playFeedback() {
+  clickSound.currentTime = 0;
   clickSound.play();
+
+  // Trigger haptic feedback if supported
+  if (navigator.vibrate) {
+    navigator.vibrate(50); // 50 ms vibration
+  }
 }
 
 // Button clicks
 countBtn.addEventListener("click", function () {
   count++;
   countBtn.innerHTML = `Count ${count}`;
-  playClickSound();
+  playFeedback();
 });
 
 resetBtn.addEventListener("click", function () {
   count = 0;
   countBtn.innerHTML = `Count`;
-  playClickSound();
+  playFeedback();
 });
 
 // Show buttons, hide title after 3s
