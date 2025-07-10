@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Libertinus+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Libertinus Mono", monospace;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 4rem;
+  transition: opacity 1s ease;
+  word-wrap: break-word;
+}
+
+.btn-group {
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  transition: opacity 1s ease;
+}
+
+.btn {
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  padding: 1.2rem 2rem;
+  background: #CDCDCD;
+  color: #000;
+  transition: all 0.3s;
+  min-width: 140px;
+  max-width: 90vw;
+}
+
+.btn:hover {
+  box-shadow: 5px 5px 10px 3px grey;
+  transform: translateY(-10px);
+}
+
+/* Transition control */
+.hidden {
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ✅ Media Queries for Responsiveness */
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 900px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  .btn {
+    font-size: 1.1rem;
+    padding: 1.1rem 1.8rem;
+  }
+}
