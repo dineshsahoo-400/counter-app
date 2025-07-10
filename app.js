@@ -2,6 +2,7 @@ const countBtn = document.getElementById("counter");
 const resetBtn = document.getElementById("reset");
 let count = 0;
 const clickSound = new Audio('assets/click.mp3');
+clickSound.preload = "auto";
 
 // Button clicks
 countBtn.addEventListener("click", function () {
